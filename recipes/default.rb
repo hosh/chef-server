@@ -33,7 +33,8 @@ else
 end
 
 package_name = ::File.basename(omnibus_package)
-package_local_path = "#{Chef::Config[:file_cache_path]}/#{package_name}"
+file_cache_path = node['chef-server']['file_cache_path'] || Chef::Config[:file_cache_path]
+package_local_path = "#{file_cache_path}/#{package_name}"
 
 # omnibus_package is remote (ie a URI) let's download it
 if ::URI.parse(omnibus_package).absolute?

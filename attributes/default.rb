@@ -22,6 +22,7 @@ default['chef-server']['nightlies'] = false
 default['chef-server']['package_file'] = nil
 default['chef-server']['package_checksum'] = nil
 default['chef-server']['api_fqdn'] = node['fqdn']
+default['chef-server']['file_cache_path'] = nil
 
 #
 # Chef Server Tunables
